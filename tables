@@ -1,0 +1,126 @@
+--  drop table payment_method
+-- create table payment_method (
+--     payment_method_id int primary key
+-- )
+
+-- create table kaspi_payment(
+--     pay_id int primary key,
+--     kaspi_id int,
+--     kaspi_wallet int,
+--     foreign key (pay_id) references payment_method (payment_method_id)
+-- )
+
+-- drop table cash_payment
+-- create table cash_payment(
+--     pay_id int primary key,
+--     cash_id int,
+--     cash_currency varchar(45),
+--     foreign key (pay_id) references payment_method (payment_method_id)
+-- )
+
+-- drop table creditcard_payment
+-- create table creditcard_payment(
+--     pay_id int primary key,
+--     creditcard_id int,
+--     credit_wallet int,
+--     foreign key (pay_id) references payment_method (payment_method_id)
+-- )
+
+
+-- drop table client
+-- create table client(
+--     clientID int primary key,
+--     c_name varchar(45)
+-- )
+
+-- drop table client_address
+-- create table client_address (
+--     client_address_id int primary key,
+--     clientID int,
+--     c_address varchar(45),
+--     foreign key (clientID) references client (clientID)
+-- )
+
+-- drop table client_payment 
+-- create table client_payment (
+--     client_payment_id int primary key,
+--     client_id int,
+--     payment_method_id int,
+--     foreign key (payment_method_id) references payment_method (payment_method_id),
+--     foreign key (client_id) references client (clientID)
+
+-- )
+
+-- drop table department
+-- create table department(
+--     department_id int primary key,
+--     dept_name varchar(45),
+--     salary int,
+--     number_of_emp int
+-- )
+
+-- drop table employees
+-- create table employees(
+--     employee_id int primary key,
+--     employee_name varchar(45),
+--     employee_phone int,
+--     department_id int,
+--     foreign key (department_id) references department(department_id)
+-- )
+
+-- create table suppliers(
+--     supplier_id int primary key,
+--     company_name varchar(45),
+--     sup_address varchar(45),
+--     sup_phone int
+-- )
+
+-- create table category(
+--     category_id int primary key,
+--     category_name varchar(45)
+-- )
+
+-- create table products(
+--     product_id int primary key,
+--     category_id int,
+--     product_name varchar(45),
+--     quntity int,
+--     price int,
+--     supplier_id int,
+--     foreign key (category_id) references category(category_id),
+--     foreign key (supplier_id) references suppliers(supplier_id)
+-- )
+
+-- drop table orders 
+-- create table orders(
+--     order_id int primary key,
+--     client_id int,
+--     emp_id int,
+--     product_id int,
+--     quantity int,
+--     foreign key (client_id) references client(clientID),
+--     foreign key (emp_id) references employees(employee_id),
+--     foreign key (product_id) references products(product_id)
+-- )
+
+-- drop table delivery
+-- create table delivery (
+--     delivery_id int primary key,
+--     delivery_type varchar(45),
+--     delivery_cost int
+-- )
+
+-- drop table order_details
+-- create table order_details(
+--     order_details_id int primary key,
+--     order_id int,
+--     payment_id int,
+--     delivery_id int,
+--     client_address_id int,
+--     total int,
+--     date_os_order date,
+--     foreign key (order_id) references orders (order_id),
+--     foreign key (payment_id) references client_payment (client_payment_id),
+--     foreign key (delivery_id) references delivery (delivery_id),
+--     foreign key (client_address_id) references client_address (client_address_id)
+-- )
