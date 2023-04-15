@@ -1,0 +1,255 @@
+--  drop table payment_method
+-- create table payment_method (
+--     payment_method_id int primary key
+-- )
+
+-- insert into payment_method (payment_method_id) values (1);
+-- insert into payment_method (payment_method_id) values (2)
+-- insert into payment_method (payment_method_id) values (3);
+-- insert into payment_method (payment_method_id) values (4);
+-- insert into payment_method (payment_method_id) values (5);
+-- insert into payment_method (payment_method_id) values (6);
+
+
+
+-- create table kaspi_payment(
+--     pay_id int primary key,
+--     kaspi_id int,
+--     kaspi_wallet int,
+--     foreign key (pay_id) references payment_method (payment_method_id)
+-- )
+
+-- insert into kaspi_payment (pay_id, kaspi_id, kaspi_wallet) values (1, 111, 123456789)
+-- insert into kaspi_payment (pay_id, kaspi_id, kaspi_wallet) values (2, 222, 789456123)
+
+
+-- drop table cash_payment
+-- create table cash_payment(
+--     pay_id int primary key,
+--     cash_id int,
+--     cash_currency varchar(45),
+--     foreign key (pay_id) references payment_method (payment_method_id)
+-- )
+
+--  insert into cash_payment (pay_id, cash_id, cash_currency) values (3, 1001, 'tenge')
+--  insert into cash_payment (pay_id, cash_id, cash_currency) values (4, 1002, 'dollars')
+
+
+
+-- drop table creditcard_payment
+-- create table creditcard_payment(
+--     pay_id int primary key,
+--     creditcard_id int,
+--     credit_wallet int,
+--     foreign key (pay_id) references payment_method (payment_method_id)
+-- )
+
+--  insert into creditcard_payment (pay_id, creditcard_id, credit_wallet) values (4, 11, 99999999)
+--  insert into creditcard_payment (pay_id, creditcard_id, credit_wallet) values (5, 22, 77777777)
+
+
+
+-- drop table client
+-- create table client(
+--     clientID int primary key,
+--     c_name varchar(45)
+-- )
+
+-- insert into client (clientID, c_name) values (1, 'Alex')
+--  insert into client (clientID, c_name) values (2, 'Olzhas')
+--  insert into client (clientID, c_name) values (3, 'Malika')
+--  insert into client (clientID, c_name) values (4, 'Polina')
+--  insert into client (clientID, c_name) values (5, 'Max')
+
+
+
+-- drop table client_address
+-- create table client_address (
+--     client_address_id int primary key,
+--     clientID int,
+--     c_address varchar(45),
+--     foreign key (clientID) references client (clientID)
+-- )
+
+-- insert into client_address (client_address_id, clientID, c_address) values (1, 1, 'Akkent 45, 46')
+-- insert into client_address (client_address_id, clientID, c_address) values (2, 1, 'Stepnoi 4, 24')
+-- insert into client_address (client_address_id, clientID, c_address) values (3, 2, 'SDU')
+-- insert into client_address (client_address_id, clientID, c_address) values (4, 3, 'MegaPark')
+-- insert into client_address (client_address_id, clientID, c_address) values (5, 4, 'Aport')
+-- insert into client_address (client_address_id, clientID, c_address) values (6, 5, 'Esentai mall')
+
+
+
+
+-- drop table client_payment 
+-- create table client_payment (
+--     client_payment_id int primary key,
+--     client_id int,
+--     payment_method_id int,
+--     foreign key (payment_method_id) references payment_method (payment_method_id),
+--     foreign key (client_id) references client (clientID)
+-- )
+
+-- insert into client_payment (client_payment_id, client_id, payment_method_id) values (1, 1, 1)
+-- insert into client_payment (client_payment_id, client_id, payment_method_id) values (2, 2, 2)
+-- insert into client_payment (client_payment_id, client_id, payment_method_id) values (3, 3, 3)
+-- insert into client_payment (client_payment_id, client_id, payment_method_id) values (4, 4, 4)
+-- insert into client_payment (client_payment_id, client_id, payment_method_id) values (5, 5, 5)
+
+
+
+-- drop table department
+-- create table department(
+--     department_id int primary key,
+--     dept_name varchar(45),
+--     salary int,
+--     number_of_emp int
+-- )
+
+-- insert into department (department_id, dept_name, salary, number_of_emp) values (1, 'Manager', 150000, 3)
+-- insert into department (department_id, dept_name, salary, number_of_emp) values (2, 'Assistant', 120000, 1)
+-- insert into department (department_id, dept_name, salary, number_of_emp) values (3, 'IT manager', 190000, 1)
+-- insert into department (department_id, dept_name, salary, number_of_emp) values (4, 'HR', 160000, 1)
+
+
+
+-- drop table employees
+-- create table employees(
+--     employee_id int primary key,
+--     employee_name varchar(45),
+--     employee_phone int,
+--     department_id int,
+--     foreign key (department_id) references department(department_id)
+-- )
+
+-- insert into employees (employee_id, employee_name, employee_phone, department_id) values (1, 'Sania', '87777777777', 1)
+-- insert into employees (employee_id, employee_name, employee_phone, department_id) values (2, 'Roma', '87477474747', 1)
+-- insert into employees (employee_id, employee_name, employee_phone, department_id) values (3, 'Erzhan', '87027020202', 1)
+-- insert into employees (employee_id, employee_name, employee_phone, department_id) values (4, 'Lola', '87017010101', 2)
+-- insert into employees (employee_id, employee_name, employee_phone, department_id) values (5, 'Aknur', '87057050505', 3)
+-- insert into employees (employee_id, employee_name, employee_phone, department_id) values (6, 'Merey', '87717717171', 4)
+
+
+
+-- create table suppliers(
+--     supplier_id int primary key,
+--     company_name varchar(45),
+--     sup_address varchar(45),
+--     sup_phone int
+-- )
+
+-- insert into suppliers (supplier_id, company_name, sup_address, sup_phone) values (1, 'Alma-Ata company', 'Akkent 45,6', 87767767676)
+-- insert into suppliers (supplier_id, company_name, sup_address, sup_phone) values (2, 'Qwerty company', 'Qwerty 221', 87012212121)
+-- insert into suppliers (supplier_id, company_name, sup_address, sup_phone) values (3, 'Karaganda company', 'Gogolya 71', 87000000000)
+-- insert into suppliers (supplier_id, company_name, sup_address, sup_phone) values (4, 'Shymkent company', 'Shym 789', 87789789789)
+-- insert into suppliers (supplier_id, company_name, sup_address, sup_phone) values (5, 'Nur-Sultan company', 'Nazarbayev 99', 87777777171)
+
+
+-- create table category(
+--     category_id int primary key,
+--     category_name varchar(45)
+-- )
+
+-- insert into category (category_id, category_name) values (1, 'tables')
+-- insert into category (category_id, category_name) values (2, 'chairs')
+-- insert into category (category_id, category_name) values (3, 'sofa')
+-- insert into category (category_id, category_name) values (4, 'closet')
+-- insert into category (category_id, category_name) values (5, 'bed')
+
+-- select * from category
+
+
+-- create table products(
+--     product_id int primary key,
+--     category_id int,
+--     product_name varchar(45),
+--     quntity int,
+--     price int,
+--     supplier_id int,
+--     foreign key (category_id) references category(category_id),
+--     foreign key (supplier_id) references suppliers(supplier_id)
+-- )
+
+-- select * from products
+-- insert into products (product_id, category_id, product_name, quntity, price, supplier_id) values (1, 1, 'Living room tables', 5, 120000, 1)
+-- insert into products (product_id, category_id, product_name, quntity, price, supplier_id) values (2, 1, 'Accent tables', 5, 120000, 1)
+-- insert into products (product_id, category_id, product_name, quntity, price, supplier_id) values (3, 1, 'Console tables', 3, 100000, 1)
+-- insert into products (product_id, category_id, product_name, quntity, price, supplier_id) values (4, 1, 'Kitchen tables', 10, 190000, 1)
+-- insert into products (product_id, category_id, product_name, quntity, price, supplier_id) values (5, 1, 'Work tables', 7, 140000, 1)
+
+-- insert into products (product_id, category_id, product_name, quntity, price, supplier_id) values (6, 2, 'Armchair', 3, 110000, 2)
+-- insert into products (product_id, category_id, product_name, quntity, price, supplier_id) values (7, 2, 'Recliner', 4, 180000, 2)
+-- insert into products (product_id, category_id, product_name, quntity, price, supplier_id) values (8, 2, 'Slipper chair', 5, 150000, 2)
+-- insert into products (product_id, category_id, product_name, quntity, price, supplier_id) values (9, 2, 'Bar stool chair', 15, 10000, 2)
+-- insert into products (product_id, category_id, product_name, quntity, price, supplier_id) values (10, 2, 'Side chair', 20, 30000, 2)
+
+-- insert into products (product_id, category_id, product_name, quntity, price, supplier_id) values (11, 3, 'Sectional sofa', 4, 200000, 3)
+-- insert into products (product_id, category_id, product_name, quntity, price, supplier_id) values (12, 3, 'Chesterfield sofa', 6, 195000, 3)
+-- insert into products (product_id, category_id, product_name, quntity, price, supplier_id) values (13, 3, 'English Roll-Arm sofa', 3, 225000, 3)
+-- insert into products (product_id, category_id, product_name, quntity, price, supplier_id) values (14, 3, 'Bridgewater sofa', 6, 230000, 3)
+-- insert into products (product_id, category_id, product_name, quntity, price, supplier_id) values (15, 3, 'Chaise Lounge sofa', 8, 210000, 3)
+
+-- insert into products (product_id, category_id, product_name, quntity, price, supplier_id) values (16, 4, 'Hinged closet door', 6, 195000, 4)
+-- insert into products (product_id, category_id, product_name, quntity, price, supplier_id) values (17, 4, 'Sliding coset door', 4, 290000, 4)
+-- insert into products (product_id, category_id, product_name, quntity, price, supplier_id) values (18, 4, 'Barn coset door', 2, 310000, 4)
+-- insert into products (product_id, category_id, product_name, quntity, price, supplier_id) values (19, 4, 'Flush coset door', 5, 350000, 4)
+-- insert into products (product_id, category_id, product_name, quntity, price, supplier_id) values (20, 4, 'Mirror coset door', 9, 400000, 4)
+
+-- insert into products (product_id, category_id, product_name, quntity, price, supplier_id) values (21, 5, 'Platform bed', 7, 200000, 5)
+-- insert into products (product_id, category_id, product_name, quntity, price, supplier_id) values (22, 5, 'Panel bed', 3, 275000, 5)
+-- insert into products (product_id, category_id, product_name, quntity, price, supplier_id) values (23, 5, 'Wall bed', 4, 280000, 5)
+-- insert into products (product_id, category_id, product_name, quntity, price, supplier_id) values (24, 5, 'Trundle bed', 6, 300000, 5)
+-- insert into products (product_id, category_id, product_name, quntity, price, supplier_id) values (25, 5, 'Adjustable bed', 5, 400000, 5)
+
+
+-- drop table orders 
+-- create table orders(
+--     order_id int primary key,
+--     client_id int,
+--     emp_id int,
+--     product_id int,
+--     quantity int,
+--     foreign key (client_id) references client(clientID),
+--     foreign key (emp_id) references employees(employee_id),
+--     foreign key (product_id) references products(product_id)
+-- )
+
+-- insert into orders (order_id, client_id, emp_id, product_id, quantity) values (1, 1, 1, 1, 1)
+-- insert into orders (order_id, client_id, emp_id, product_id, quantity) values (2, 2, 2, 21, 1)
+-- insert into orders (order_id, client_id, emp_id, product_id, quantity) values (3, 3, 5, 15, 2)
+-- insert into orders (order_id, client_id, emp_id, product_id, quantity) values (4, 4, 4, 19, 1)
+
+
+-- drop table delivery
+-- create table delivery (
+--     delivery_id int primary key,
+--     delivery_type varchar(45),
+--     delivery_cost int
+-- )
+
+-- insert into delivery (delivery_id, delivery_type, delivery_cost) values (1, 'pickup', 0)
+-- insert into delivery (delivery_id, delivery_type, delivery_cost) values (2, 'delivery', 2000)
+
+
+--  drop table order_details
+-- create table order_details(
+--     order_details_id int primary key,
+--     order_id int,
+--     payment_id int,
+--     delivery_id int,
+--     client_address_id int,
+--     total int,
+--     date_of_order date,
+--     foreign key (order_id) references orders (order_id),
+--     foreign key (payment_id) references client_payment (client_payment_id),
+--     foreign key (delivery_id) references delivery (delivery_id),
+--     foreign key (client_address_id) references client_address (client_address_id)
+-- )
+
+-- insert into order_details (order_details_id, order_id, payment_id, delivery_id, client_address_id, total, date_of_order) values (1, 1, 1, 2, 1, 122000, SYSDATE)
+-- insert into order_details (order_details_id, order_id, payment_id, delivery_id, client_address_id, total, date_of_order) values (2, 2, 2, 1, 2, 200000, SYSDATE)
+-- insert into order_details (order_details_id, order_id, payment_id, delivery_id, client_address_id, total, date_of_order) values (3, 3, 3, 2, 3, 422000, SYSDATE)
+-- insert into order_details (order_details_id, order_id, payment_id, delivery_id, client_address_id, total, date_of_order) values (4, 4, 4, 1, 4, 350000, SYSDATE)
+
+
+-- select * from order_details
