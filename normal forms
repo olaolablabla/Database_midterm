@@ -1,0 +1,23 @@
+Tables in BCNF (Boyce-Codd Normal Form), which means that they meet the following conditions:
+
+The table is in 3NF (Third Normal Form).
+Every determinant is a candidate key.
+There are no non-trivial functional dependencies between candidate keys.
+To verify this, we can analyze each table and its dependencies. Here are the analysis results:
+
+1. Table 'payment_method' has only one attribute, which is the primary key. Therefore, it is already in BCNF.
+2. Table 'kaspi_payment' has two attributes as its primary key (pay_id and kaspi_id), and no other attributes are dependent on these primary keys. Therefore, it is already in BCNF.
+3. Table 'cash_payment' has two attributes as its primary key (pay_id and cash_id), and no other attributes are dependent on these primary keys. Therefore, it is already in BCNF.
+4. Table 'creditcard_payment' has two attributes as its primary key (pay_id and creditcard_id), and no other attributes are dependent on these primary keys. Therefore, it is already in BCNF.
+5. Table 'client' has only one attribute as its primary key. Therefore, it is already in BCNF.
+6. Table 'client_address' has two attributes as its primary key (client_address_id and clientID), and no other attributes are dependent on these primary keys. Therefore, it is already in BCNF.
+7. Table 'client_payment' has three attributes as its primary key (client_payment_id, client_id, and payment_method_id), and no other attributes are dependent on these primary keys. Therefore, it is already in BCNF.
+8. Table 'department' has only one attribute as its primary key. Therefore, it is already in BCNF.
+9. Table 'employees' has only one attribute as its primary key (employee_id), and department_id is dependent on this primary key. Since department_id is a candidate key, this table is already in BCNF.
+10. Table 'suppliers' has only one attribute as its primary key. Therefore, it is already in BCNF.
+11. Table 'category' has only one attribute as its primary key. Therefore, it is already in BCNF.
+12. Table 'products' has two attributes as its primary key (product_id and category_id), and supplier_id is dependent on product_id. Since product_id is a candidate key, this table is already in BCNF.
+13. Table 'orders' has only one attribute as its primary key (order_id), and client_id, emp_id, and product_id are dependent on this primary key. Since all of these attributes are candidate keys, this table is already in BCNF.
+14. Table 'delivery' has only one attribute as its primary key. Therefore, it is already in BCNF.
+15. Table 'order_details' has only one attribute as its primary key (order_details_id), and order_id, payment_id, delivery_id, and client_address_id are dependent on this primary key. Since all of these attributes are candidate keys, this table is already in BCNF.
+Therefore, all tables in the given database are already in BCNF.
