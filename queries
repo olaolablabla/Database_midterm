@@ -1,0 +1,119 @@
+-- PROCEDURE WHICH GROUP BY INFO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+-- CREATE OR REPLACE PROCEDURE use_payment AS
+-- BEGIN
+-- DECLARE
+--     num_kaspi_clients NUMBER;
+--     num_cash_clients NUMBER;
+--     num_creditcard_clients NUMBER;
+--   BEGIN
+--     SELECT COUNT(*) INTO num_kaspi_clients FROM client_payment WHERE payment_method_id = 1;
+--     SELECT COUNT(*) INTO num_cash_clients FROM client_payment WHERE payment_method_id = 2;
+--     SELECT COUNT(*) INTO num_creditcard_clients FROM client_payment WHERE payment_method_id = 3;
+--     DBMS_OUTPUT.PUT_LINE('Number of clients using Kaspi: ' || num_kaspi_clients);
+--     DBMS_OUTPUT.PUT_LINE('Number of clients using cash: ' || num_cash_clients);
+--     DBMS_OUTPUT.PUT_LINE('Number of clients using credit card: ' || num_creditcard_clients);
+--   END;
+-- END;
+
+-- BEGIN
+--     use_payment;
+-- END;
+
+
+-- CREATE OR REPLACE PROCEDURE made_payment AS
+-- BEGIN
+-- DECLARE
+--     num_kaspi_payments NUMBER;
+--     num_cash_payments NUMBER;
+--     num_creditcard_payments NUMBER;
+--   BEGIN
+--     SELECT COUNT(*) INTO num_kaspi_payments FROM kaspi_payment;
+--     SELECT COUNT(*) INTO num_cash_payments FROM cash_payment;
+--     SELECT COUNT(*) INTO num_creditcard_payments FROM creditcard_payment;
+--     DBMS_OUTPUT.PUT_LINE('Number of payments made with Kaspi: ' || num_kaspi_payments);
+--     DBMS_OUTPUT.PUT_LINE('Number of payments made with cash: ' || num_cash_payments);
+--     DBMS_OUTPUT.PUT_LINE('Number of payments made with credit card: ' || num_creditcard_payments);
+--   END;
+-- END;
+
+-- BEGIN
+--     made_payment;
+-- END;
+
+
+
+
+-- PROCEDURE SQL%ROWCOUNT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+-- CREATE OR REPLACE PROCEDURE update_salary (
+--   d_id IN NUMBER,
+--   salary_increase IN NUMBER
+-- )
+-- IS
+-- BEGIN
+--   UPDATE employees
+--   SET salary = salary - salary_increase
+--   WHERE department_id = d_id;
+  
+--   IF SQL%ROWCOUNT > 0 THEN
+--     DBMS_OUTPUT.PUT_LINE(SQL%ROWCOUNT || ' rows updated.');
+--   ELSE
+--     DBMS_OUTPUT.PUT_LINE('No rows updated.');
+--   END IF;
+-- END;
+
+-- DECLARE
+--     department_id employees.department_id%TYPE := 1;
+--     salary number := 110000;
+-- BEGIN
+--     update_salary(department_id, salary);
+-- END;
+
+-- select * from employees;
+
+
+
+-- TRIGGER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+-- drop trigger trigger_for_client
+-- CREATE OR REPLACE TRIGGER trigger_for_client
+-- BEFORE INSERT ON client
+-- FOR EACH ROW
+-- DECLARE
+--     count_row number;
+-- BEGIN
+--     SELECT COUNT(*) INTO count_row FROM client;
+--     DBMS_OUTPUT.PUT_LINE('Before inser = '||count_row);
+-- END;
+
+-- insert into client values (111, 'Akerke');
+-- select * from client
+
+
+
+
+-- EXCEPTION !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+declare 
+    product_id products.product_id%type := :id;
+    category_id products.category_id%type := 1;
+    product_name products.product_name%type := :product_name;
+    quantity products.quntity%type := 1;
+    price products.QUNTITY%type := :price;
+    supplier_id products.supplier_id%type := 1;
+    invalid_data exception;
+
+begin
+    if length(product_name) < 5 then
+    raise invalid_data;
+    else 
+    insert into products (product_id, category_id, product_name, quntity, price, supplier_id) values (product_id, category_id, product_name, quantity, price, supplier_id);
+    end if;
+
+exception
+    when invalid_data then 
+    DBMS_OUTPUT.PUT_LINE('Invalid name entered.');
+    when others then 
+    DBMS_OUTPUT.PUT_LINE('Error!');
+end;
