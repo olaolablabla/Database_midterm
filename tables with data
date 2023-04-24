@@ -218,6 +218,11 @@
 -- insert into orders (order_id, client_id, emp_id, product_id, quantity) values (2, 2, 2, 21, 1)
 -- insert into orders (order_id, client_id, emp_id, product_id, quantity) values (3, 3, 5, 15, 2)
 -- insert into orders (order_id, client_id, emp_id, product_id, quantity) values (4, 4, 4, 19, 1)
+-- insert into orders (order_id, client_id, emp_id, product_id, quantity) values (5, 1, 1, 8, 1)
+-- insert into orders (order_id, client_id, emp_id, product_id, quantity) values (6, 1, 1, 7, 1)
+-- insert into orders (order_id, client_id, emp_id, product_id, quantity) values (7, 2, 1, 4, 1)
+-- insert into orders (order_id, client_id, emp_id, product_id, quantity) values (8, 4, 1, 20, 1)
+-- insert into orders (order_id, client_id, emp_id, product_id, quantity) values (9, 5, 1, 18, 1)
 
 
 -- drop table delivery
@@ -250,6 +255,11 @@
 -- insert into order_details (order_details_id, order_id, payment_id, delivery_id, client_address_id, total, date_of_order) values (2, 2, 2, 1, 2, 200000, SYSDATE)
 -- insert into order_details (order_details_id, order_id, payment_id, delivery_id, client_address_id, total, date_of_order) values (3, 3, 3, 2, 3, 422000, SYSDATE)
 -- insert into order_details (order_details_id, order_id, payment_id, delivery_id, client_address_id, total, date_of_order) values (4, 4, 4, 1, 4, 350000, SYSDATE)
+-- insert into order_details (order_details_id, order_id, payment_id, delivery_id, client_address_id, total, date_of_order) values (5, 5, 1, 1, 1, 150000, SYSDATE)
+-- insert into order_details (order_details_id, order_id, payment_id, delivery_id, client_address_id, total, date_of_order) values (6, 6, 1, 1, 1, 180000, SYSDATE)
+-- insert into order_details (order_details_id, order_id, payment_id, delivery_id, client_address_id, total, date_of_order) values (7, 7, 2, 2, 3, 200000, SYSDATE)
+-- insert into order_details (order_details_id, order_id, payment_id, delivery_id, client_address_id, total, date_of_order) values (8, 8, 4, 1, 5, 410000, SYSDATE)
+-- insert into order_details (order_details_id, order_id, payment_id, delivery_id, client_address_id, total, date_of_order) values (9, 9, 5, 1, 6, 310000, SYSDATE)
 
 
 -- select * from order_details
