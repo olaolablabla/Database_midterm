@@ -55,7 +55,6 @@
 -- create table department(
 --     department_id int primary key,
 --     dept_name varchar(45),
---     salary int,
 --     number_of_emp int
 -- )
 
@@ -64,6 +63,7 @@
 --     employee_id int primary key,
 --     employee_name varchar(45),
 --     employee_phone int,
+--     salary int,
 --     department_id int,
 --     foreign key (department_id) references department(department_id)
 -- )
