@@ -42,6 +42,30 @@
 -- END;
 
 
+-- CREATE OR REPLACE PROCEDURE avg_salary AS
+-- BEGIN
+-- DECLARE
+--     manager_avg_salary NUMBER;
+--     assistant_avg_salary NUMBER;
+--     it_manager_avg_salary NUMBER;
+--     hr_avg_salary NUMBER;
+--   BEGIN
+--     SELECT AVG(salary) INTO manager_avg_salary FROM EMPLOYEES WHERE department_id = 1;
+--     SELECT AVG(salary) INTO assistant_avg_salary FROM EMPLOYEES WHERE department_id = 2;
+--     SELECT AVG(salary) INTO it_manager_avg_salary FROM EMPLOYEES WHERE department_id = 3;
+--     SELECT AVG(salary) INTO hr_avg_salary FROM EMPLOYEES WHERE department_id = 4;
+--     DBMS_OUTPUT.PUT_LINE('Average salary for Managers: ' || manager_avg_salary);
+--     DBMS_OUTPUT.PUT_LINE('Average salary for Assistants: ' || assistant_avg_salary);
+--     DBMS_OUTPUT.PUT_LINE('Average salary for IT managers: ' || it_manager_avg_salary);
+--     DBMS_OUTPUT.PUT_LINE('Average salary for HR: ' || hr_avg_salary);
+--   END;
+-- END;
+
+-- begin
+--  avg_salary;
+-- end;
+
+
 
 
 -- PROCEDURE SQL%ROWCOUNT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
