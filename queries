@@ -95,25 +95,25 @@
 
 -- EXCEPTION !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-declare 
-    product_id products.product_id%type := :id;
-    category_id products.category_id%type := 1;
-    product_name products.product_name%type := :product_name;
-    quantity products.quntity%type := 1;
-    price products.QUNTITY%type := :price;
+DECLARE 
+    product_id products.product_id%TYPE := :id;
+    category_id products.category_id%TYPDE := 1;
+    product_name products.product_name%TYPE := :product_name;
+    quantity products.quntity%TYPE := 1;
+    price products.QUNTITY%TYPE := :price;
     supplier_id products.supplier_id%type := 1;
-    invalid_data exception;
+    invalid_data EXCEPTION;
 
-begin
-    if length(product_name) < 5 then
+BEGIN
+    IF length(product_name) < 5 THEN
     raise invalid_data;
-    else 
-    insert into products (product_id, category_id, product_name, quntity, price, supplier_id) values (product_id, category_id, product_name, quantity, price, supplier_id);
-    end if;
+    ELSE 
+    INSERT INTO products (product_id, category_id, product_name, quntity, price, supplier_id) values (product_id, category_id, product_name, quantity, price, supplier_id);
+    ELSE IF;
 
-exception
-    when invalid_data then 
+EXCEPTION
+    WHEN invalid_data THEN 
     DBMS_OUTPUT.PUT_LINE('Invalid name entered.');
-    when others then 
+    WHEN others THEN 
     DBMS_OUTPUT.PUT_LINE('Error!');
-end;
+END;
