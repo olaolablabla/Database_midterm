@@ -98,36 +98,36 @@
 
 
 
--- drop table department
+-- drop table department;
 -- create table department(
 --     department_id int primary key,
 --     dept_name varchar(45),
---     salary int,
 --     number_of_emp int
 -- )
 
--- insert into department (department_id, dept_name, salary, number_of_emp) values (1, 'Manager', 150000, 3)
--- insert into department (department_id, dept_name, salary, number_of_emp) values (2, 'Assistant', 120000, 1)
--- insert into department (department_id, dept_name, salary, number_of_emp) values (3, 'IT manager', 190000, 1)
--- insert into department (department_id, dept_name, salary, number_of_emp) values (4, 'HR', 160000, 1)
+-- insert into department (department_id, dept_name, number_of_emp) values (1, 'Manager', 3)
+-- insert into department (department_id, dept_name, number_of_emp) values (2, 'Assistant', 1)
+-- insert into department (department_id, dept_name, number_of_emp) values (3, 'IT manager', 1)
+-- insert into department (department_id, dept_name, number_of_emp) values (4, 'HR', 1)
 
 
 
--- drop table employees
+-- drop table employees;
 -- create table employees(
 --     employee_id int primary key,
 --     employee_name varchar(45),
 --     employee_phone int,
+--     salary int,
 --     department_id int,
 --     foreign key (department_id) references department(department_id)
 -- )
 
--- insert into employees (employee_id, employee_name, employee_phone, department_id) values (1, 'Sania', '87777777777', 1)
--- insert into employees (employee_id, employee_name, employee_phone, department_id) values (2, 'Roma', '87477474747', 1)
--- insert into employees (employee_id, employee_name, employee_phone, department_id) values (3, 'Erzhan', '87027020202', 1)
--- insert into employees (employee_id, employee_name, employee_phone, department_id) values (4, 'Lola', '87017010101', 2)
--- insert into employees (employee_id, employee_name, employee_phone, department_id) values (5, 'Aknur', '87057050505', 3)
--- insert into employees (employee_id, employee_name, employee_phone, department_id) values (6, 'Merey', '87717717171', 4)
+-- insert into employees (employee_id, employee_name, employee_phone, salary, department_id) values (1, 'Sania', '87777777777', 150000, 1)
+-- insert into employees (employee_id, employee_name, employee_phone, salary, department_id) values (2, 'Roma', '87477474747', 180000, 1)
+-- insert into employees (employee_id, employee_name, employee_phone, salary, department_id) values (3, 'Erzhan', '87027020202', 170000, 1)
+-- insert into employees (employee_id, employee_name, employee_phone, salary, department_id) values (4, 'Lola', '87017010101', 190000, 2)
+-- insert into employees (employee_id, employee_name, employee_phone, salary, department_id) values (5, 'Aknur', '87057050505',210000, 3)
+-- insert into employees (employee_id, employee_name, employee_phone, salary, department_id) values (6, 'Merey', '87717717171', 500000, 4)
 
 
 
