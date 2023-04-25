@@ -66,6 +66,29 @@
 -- end;
 
 
+-- FUNCTION !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+-- DROP FUNCTION count_records
+-- CREATE OR REPLACE FUNCTION count_records
+--   (table_name IN VARCHAR2)
+--   RETURN NUMBER
+--   IS
+--   total_count NUMBER;
+-- BEGIN
+--    EXECUTE IMMEDIATE 'SELECT COUNT(*) FROM ' || table_name INTO total_count;
+--   RETURN total_count;
+-- END;
+
+-- DECLARE
+--   total_count NUMBER;
+-- BEGIN
+--   total_count := count_records('employees');
+--   DBMS_OUTPUT.PUT_LINE('Number of records in employees table: ' || total_count);
+-- END;
+
+-- select * from employees
+
+
 
 
 -- PROCEDURE SQL%ROWCOUNT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
