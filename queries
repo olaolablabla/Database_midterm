@@ -90,6 +90,23 @@
 
 
 
+-- DROP FUNCTION get_count
+-- CREATE OR REPLACE FUNCTION get_count
+-- RETURN NUMBER IS
+--     total_c number;
+--     BEGIN
+--     SELECT count(*) INTO total_c FROM employees;
+--     RETURN total_c;
+-- END;
+
+-- DECLARE 
+--    total_count number; 
+-- BEGIN 
+--    total_count := get_count(); 
+--    DBMS_OUTPUT.PUT_LINE('Number of records in employees table: ' || total_count); 
+-- END; 
+
+
 
 -- PROCEDURE SQL%ROWCOUNT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
