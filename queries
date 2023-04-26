@@ -88,7 +88,7 @@
 
 -- select * from employees
 
-
+-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 -- DROP FUNCTION get_count
 -- CREATE OR REPLACE FUNCTION get_count
@@ -106,6 +106,33 @@
 --    DBMS_OUTPUT.PUT_LINE('Number of records in employees table: ' || total_count); 
 -- END; 
 
+-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+-- DROP FUNCTION count_orders_by_employee
+-- CREATE OR REPLACE FUNCTION count_orders_by_employee 
+-- RETURN SYS_REFCURSOR AS
+--     result_set SYS_REFCURSOR;
+-- BEGIN
+--     OPEN result_set FOR
+--         SELECT e.employee_name, COUNT(*) AS order_count
+--         FROM employees e
+--         JOIN orders o ON e.employee_id = o.emp_id
+--         GROUP BY e.employee_name;
+--     RETURN result_set;
+-- END;
+
+-- DECLARE
+--     result_set SYS_REFCURSOR;
+--     employee_name VARCHAR2(45);
+--     order_count NUMBER;
+-- BEGIN
+--     result_set := count_orders_by_employee;
+--     LOOP
+--         FETCH result_set INTO employee_name, order_count;
+--         EXIT WHEN result_set%NOTFOUND;
+--         DBMS_OUTPUT.PUT_LINE('Employee ' || employee_name || ' has ' || order_count || ' orders.');
+--     END LOOP;
+-- END;
 
 
 -- PROCEDURE SQL%ROWCOUNT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
