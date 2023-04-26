@@ -191,7 +191,7 @@
 
 DECLARE 
     product_id products.product_id%TYPE := :id;
-    category_id products.category_id%TYPDE := 1;
+    category_id products.category_id%TYPE := 1;
     product_name products.product_name%TYPE := :product_name;
     quantity products.quntity%TYPE := 1;
     price products.QUNTITY%TYPE := :price;
@@ -203,7 +203,7 @@ BEGIN
     raise invalid_data;
     ELSE 
     INSERT INTO products (product_id, category_id, product_name, quntity, price, supplier_id) values (product_id, category_id, product_name, quantity, price, supplier_id);
-    ELSE IF;
+    END IF;
 
 EXCEPTION
     WHEN invalid_data THEN 
