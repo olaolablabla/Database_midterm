@@ -175,7 +175,7 @@
 --     count_row number;
 -- BEGIN
 --     SELECT COUNT(*) INTO count_row FROM client;
---     DBMS_OUTPUT.PUT_LINE('Before inser = '||count_row);
+--     DBMS_OUTPUT.PUT_LINE('Before insert = '||count_row);
 -- END;
 
 -- insert into client values (111, 'Akerke');
