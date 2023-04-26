@@ -137,6 +137,9 @@
 
 -- PROCEDURE SQL%ROWCOUNT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+-select * from employees
+
+-- DROP PROCEDURE update_salary
 -- CREATE OR REPLACE PROCEDURE update_salary (
 --   d_id IN NUMBER,
 --   salary_increase IN NUMBER
