@@ -1,5 +1,26 @@
 -- PROCEDURE WHICH GROUP BY INFO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+
+CREATE OR REPLACE PROCEDURE group_by_info
+IS
+BEGIN
+  FOR rec IN (
+    SELECT department_id, avg(salary) AS avg_salary
+    FROM employees
+    GROUP BY department_id
+  )
+  loop
+    DBMS_OUTPUT.PUT_LINE('Department: ' || rec.department_id || ', Avg_salary: ' || rec.avg_salary);
+  END LOOP;
+END;
+
+begin
+    group_by_info;
+end;
+
+
+
+
 -- CREATE OR REPLACE PROCEDURE use_payment AS
 -- BEGIN
 -- DECLARE
